@@ -1,0 +1,31 @@
+[protab]
+command=~/.config/i3blocks/poradi.py
+interval=60
+
+#[ping]
+#command=ping -c 1 8.8.8.8
+#interval=1
+
+[cpu]
+command=~/.config/i3blocks/cpu
+interval=5
+color=#fc2d42
+
+[memory]
+command=~/.config/i3blocks/memory
+interval=5
+color=#29f4e3
+
+[disk]
+command=~/.config/i3blocks/disk
+interval=5
+color=#ff7f00
+
+[battery]
+command=~/.config/i3blocks/battery
+interval=10
+color=#91E78B
+
+[time]
+command=date +%T
+interval=1
