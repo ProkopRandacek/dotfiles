@@ -1,31 +1,46 @@
-[protab]
-command=~/.config/i3blocks/poradi.py
-interval=60
+#[protab]
+#command=~/.config/i3blocks/poradi.py
+#interval=60
 
-#[ping]
-#command=ping -c 1 8.8.8.8
-#interval=1
+[cpu]
+command=~/.config/i3blocks/network
+interval=1
 
 [cpu]
 command=~/.config/i3blocks/cpu
-interval=5
+interval=1
 color=#fc2d42
 
 [memory]
 command=~/.config/i3blocks/memory
-interval=5
-color=#29f4e3
+interval=1
+color=#05ffff
+
+[swap]
+command=~/.config/i3blocks/swap
+interval=1
+color=#ccf70c
 
 [disk]
 command=~/.config/i3blocks/disk
-interval=5
+interval=1
 color=#ff7f00
+
+[io]
+command=~/.config/i3blocks/io
+interval=1
+color=#f6ff05
 
 [battery]
 command=~/.config/i3blocks/battery
-interval=10
-color=#91E78B
+interval=1
+color=#91e78b
 
 [time]
 command=date +%T
 interval=1
+
+colors = true
+color_good = "#00FF00"
+color_degraded = "#FFFF00"
+color_bad = "#FF0000"

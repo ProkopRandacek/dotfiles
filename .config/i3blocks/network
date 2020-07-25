@@ -1,0 +1,3 @@
+#!/bin/bash
+cpu=$(nmcli connection show --active | grep NAME --invert-match | awk '{print $1}')
+echo $cpu

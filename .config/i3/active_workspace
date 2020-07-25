@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+echo $(i3-msg -t get_workspaces | jq | grep '"visible": true' -B 1 | grep "name" | awk '{print substr($2, 2, 1)}')

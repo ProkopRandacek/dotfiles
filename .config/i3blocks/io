@@ -1,0 +1,4 @@
+#!/bin/bash
+read=$(iostat | grep sda | awk '{print $3}')
+write=$(iostat | grep sda | awk '{print $4}')
+echo "r: "$read" kB/s w: "$write" kB/s"
