@@ -31,16 +31,11 @@ command=~/.config/i3blocks/io
 interval=1
 color=#f6ff05
 
-[battery]
-command=~/.config/i3blocks/battery
-interval=1
-color=#91e78b
+#[battery]
+#command=~/.config/i3blocks/battery
+#interval=1
+#color=#91e78b
 
 [time]
-command=date +%T
+command=date -u +"%A %d. %m. %Y %H:%M:%S"
 interval=1
-
-colors = true
-color_good = "#00FF00"
-color_degraded = "#FFFF00"
-color_bad = "#FF0000"

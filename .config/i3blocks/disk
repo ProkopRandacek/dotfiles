@@ -1,6 +1,6 @@
 #!/bin/bash
 usage=$(df -h | grep /dev/sda1 | awk '{usage=($3)} END {print usage}')
-full=$(df -h | grep /dev/sda1 | awk '{full=($4)} END {print full}')
+full=$(df -h | grep /dev/sda1 | awk '{full=($2)} END {print full}')
 usage=${usage:0:3}
 full=${full:0:3}
 echo $usage"/"$full
