@@ -24,11 +24,7 @@ Plug 'rhysd/vim-color-spring-night'
 " Functionalities
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter'
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'zchee/deoplete-jedi'
-Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
@@ -59,6 +55,7 @@ set undofile
 set encoding=utf-8
 
 set number
+set foldmethod=indent
 
 set nowrap       " disable word wrap
 set linebreak    " break on words if wrap is enabled
@@ -69,15 +66,14 @@ set ignorecase smartcase  " ignore search case, unless we type a capital
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
+"let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
+
 
 " Auto running the code
 autocmd FileType python map <F5> :w \| !py %<cr>
 
-
 hi SpellBad cterm=underline
-
 
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePre *.json execute ':%!python -m json.tool'
