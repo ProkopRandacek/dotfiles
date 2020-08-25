@@ -82,6 +82,9 @@ autocmd BufWritePre *.json execute ':%!python -m json.tool'
 autocmd FileType html setlocal tabstop=2 shiftwidth=2
 autocmd FileType md   setlocal tabstop=2 shiftwidth=2
 
+" Folding
+nnoremap <space> za
+
 " Custom commands
 command Spc :set spell spelllang=cz
 command Spe :set spell spelllang=en_us
