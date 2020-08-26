@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 echo "removing old dotfiles"
 rm ./.config/nvim/* -rf
 rm ./.config/fish/* -rf

@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup script
+
+[Service]
+Type=simple
+ExecStart=sudo -u prokop /home/prokop/scripts/backup/backup.sh
+
+[Install]
+WantedBy=multi-user.target
