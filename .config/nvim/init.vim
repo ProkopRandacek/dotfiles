@@ -85,7 +85,16 @@ autocmd FileType md   setlocal tabstop=2 shiftwidth=2
 " Folding
 nnoremap <space> za
 
-" Custom commands
+" Spell stuff
 command Spc :set spell spelllang=cz_cs
 command Spe :set spell spelllang=en_us
 command Spn :set nospell
+
+
+hi SpellBad NONE
+hi SpellBad cterm=underline
+hi SpellBad ctermfg=red
+
+hi SpellCap NONE
+hi SpellCap cterm=underline
+hi SpellCap ctermfg=blue
