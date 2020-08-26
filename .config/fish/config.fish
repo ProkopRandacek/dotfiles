@@ -9,3 +9,5 @@ alias ll "exa --group-directories-first --sort="Extension" -la"
 alias sl ls
 alias cl clear
 alias py python
+alias backup /home/prokop/scripts/backup/backup.sh
+alias packup /home/prokop/scripts/backup/packup.sh
