@@ -24,12 +24,11 @@ Plug 'rhysd/vim-color-spring-night'
 " Functionalities
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-"Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'vim-scripts/loremipsum'
@@ -37,6 +36,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 Plug 'dkarter/bullets.vim'
+Plug 'dag/vim-fish'
 call plug#end()
 
 " Colors
@@ -86,6 +86,6 @@ autocmd FileType md   setlocal tabstop=2 shiftwidth=2
 nnoremap <space> za
 
 " Custom commands
-command Spc :set spell spelllang=cz
+command Spc :set spell spelllang=cz_cs
 command Spe :set spell spelllang=en_us
 command Spn :set nospell
