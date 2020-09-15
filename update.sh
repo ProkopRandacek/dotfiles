@@ -1,14 +1,15 @@
 #!/usr/bin/bash
 echo "removing old dotfiles"
-rm ./.config/nvim/* -rf
-rm ./.config/fish/* -rf
-rm ./scripts/*      -rf
+rm ./.config/i3/*     -rf
+rm ./.config/nvim/*   -rf
+rm ./.config/fish/*   -rf
+rm ./.config/ranger/* -rf
 rm ./.gitconfig
 
 echo "copying new dotfiles"
-cp ~/.config/nvim/* ./.config/nvim/ -r
-cp ~/.config/fish/* ./.config/fish/ -r
-cp ~/scripts/*      ./scripts       -r
-cp ~/.gitconfig     ./
-
+cp ~/.config/i3/*     ./.config/i3/     -r
+cp ~/.config/nvim/*   ./.config/nvim/   -r
+cp ~/.config/fish/*   ./.config/fish/   -r
+cp ~/.config/ranger/* ./.config/ranger/ -r
+cp ~/.gitconfig       ./
 echo "done"

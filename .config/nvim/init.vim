@@ -27,8 +27,6 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'vim-scripts/loremipsum'
@@ -73,14 +71,14 @@ let g:airline_section_warning = ''
 " Auto running the code
 autocmd FileType python map <F5> :w \| !py %<cr>
 
-hi SpellBad cterm=underline
-
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePre *.json execute ':%!python -m json.tool'
 
 " Custom tab sizes for some files
 autocmd FileType html setlocal tabstop=2 shiftwidth=2
 autocmd FileType md   setlocal tabstop=2 shiftwidth=2
+
+autocmd FileType md   set wrap
 
 " Folding
 nnoremap <space> za
