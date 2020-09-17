@@ -1,40 +1,9 @@
-" Plugins
-call plug#begin('~/.vim/plugged')
-
-" Aesthetics - Main
-Plug 'dracula/vim', { 'commit': '147f389f4275cec4ef43ebc25e2011c57b45cc00' }
+" Plugins call plug#begin('~/.vim/plugged')
+Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/vim-journal'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'nightsense/forgotten'
-Plug 'zaki/zazen'
-Plug 'psf/black', {'commit': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1'}
-
-" Aethetics - Additional
-Plug 'nightsense/nemo'
-Plug 'yuttie/hydrangea-vim'
-Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
-Plug 'rhysd/vim-color-spring-night'
-
-" Functionalities
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'junegunn/vim-easy-align'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-abolish'
-Plug 'chrisbra/Colorizer'
-Plug 'heavenshell/vim-pydocstring'
-Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'metakirby5/codi.vim'
-Plug 'dkarter/bullets.vim'
 Plug 'dag/vim-fish'
+Plug 'vim-scripts/DrawIt'
 call plug#end()
 
 " Colors
