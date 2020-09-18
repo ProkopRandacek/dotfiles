@@ -1,14 +1,14 @@
-" Plugins call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim'
+" Plugins
+call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dag/vim-fish'
-Plug 'vim-scripts/DrawIt'
+Plug 'psf/black', {'commit': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1'}
+Plug 'gyim/vim-boxdraw'
 call plug#end()
 
 " Colors
 syntax on
-color dracula
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
