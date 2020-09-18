@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+$name="$(cat /etc/hostname)"
+
+kitty&
+setxkbmap us,cz -variant ,ucw -option grp:caps_switchexit&
+feh --bg-max ~/bg0.png&
+nm-applet&
+copyq&
+kmix&
+telegram-desktop&
+
+if test "$name" = "flower"
+then
+	xrandr --output HDMI-1 --mode 1600x900 --rate 60 --left-of DP-1&
+	picom --experimental-backends --backend glx --blur-method dual_kawase --blur-strength 4&
+	copyq&
+	firefox&
+	discord&
+	steam&
+fi
