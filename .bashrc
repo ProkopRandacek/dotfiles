@@ -9,28 +9,20 @@ export VISUAL="nvim"
 export DIFFPROG='nvim -d'
 
 alias s=sudo
-alias r=ranger
 alias c=clear
-alias ls="exa --group-directories-first --sort="Extension""
-alias ll="exa --group-directories-first --sort="Extension" -la"
+alias re='sudo $(history -p !!)'
+alias ls='exa --group-directories-first --sort="Extension"'
+alias ll='exa --group-directories-first --sort="Extension" -la'
 alias sl=ls
 alias py=python
-alias pingg="ping 8.8.8.8"
-alias pingr="ping $(route -n | grep UG | awk '{print $2}')"
+alias pingg='ping 8.8.8.8'
+alias pingr='ping $(route -n | grep UG | awk "{print $2}")'
 alias backup=/home/prokop/scripts/backup/backup.sh
 alias packup=/home/prokop/scripts/backup/packup.sh
+alias sshvps='ssh prokop@randacek.dev'
 
 function add_to_backup_list {
 	echo $PWD/$1 >> ~/backuplist
-}
-
-function sudo {
-    if test "$1" = ""
-	then
-		eval command sudo $(echo $!)
-    else
-        command sudo $1
-	fi
 }
 
 # === FISH PROMPT ===
@@ -60,7 +52,7 @@ hostname()
 	then
 		printf "${y}"
 	fi
-	printf $(cat /etc/hostname)
+	printf flower
 }
 
 short_path()
@@ -104,7 +96,7 @@ exitstatus()
 {
     if [[ $1 != 0 ]]
 	then
-		printf " "${r}[${e}${r}${bold}$1${e}${r}]${e}
+		printf " "${r}[$1]${e}
     fi
 }
 
