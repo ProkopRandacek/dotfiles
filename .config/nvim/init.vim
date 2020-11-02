@@ -19,6 +19,8 @@ highlight NonText guibg=none
 set tabstop=4 shiftwidth=4
 set autoindent smartindent
 set undofile
+set backup
+set writebackup
 set encoding=utf-8
 
 set number
@@ -30,6 +32,10 @@ set breakindent  " indent broken lines if wrap is enabled
 
 set incsearch hlsearch    " search (and highlight) as we type
 set ignorecase smartcase  " ignore search case, unless we type a capital
+
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
 
 " Airline
 let g:airline_powerline_fonts = 1

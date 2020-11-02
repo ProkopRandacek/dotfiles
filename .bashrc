@@ -5,25 +5,51 @@ PATH="$PATH:/home/prokop/.local/lib/python3.8/site-packages/"
 PATH="$PATH:/home/prokop/.local/bin"
 export PATH
 export EDITOR='nvim'
-export VISUAL="nvim"
-export DIFFPROG='nvim -d'
+export VISUAL="code"
+export DIFFPROG='code -d'
 
 alias s=sudo
 alias c=clear
+
 alias re='sudo $(history -p !!)'
 alias ls='exa --group-directories-first --sort="Extension"'
 alias ll='exa --group-directories-first --sort="Extension" -la'
-alias sl=ls
-alias py=python
+alias sl='ls'
+alias py='python'
+alias vi='vim'
+
+alias vpn='sudo openvpn /home/prokop/openvpn/client.ovpn'
+alias vim='nvim'
+
 alias pingg='ping 8.8.8.8'
 alias pingr='ping $(route -n | grep UG | awk "{print $2}")'
+alias ffrec='ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 output.mkv'
+
+alias vibash='vim ~/.bashrc' # I find it difficult to type `.bashrc`
+
 alias backup=/home/prokop/scripts/backup/backup.sh
 alias packup=/home/prokop/scripts/backup/packup.sh
 alias sshvps='ssh prokop@randacek.dev'
+alias sshope='ssh sfs2x@rbxrouter.kenpa.cz -p 4053'
+
+alias libreoffice='flatpak run org.libreoffice.LibreOffice'
+
+function ff2mp4 {
+	ffmpeg -i "$1" -codec copy "${1%.*}.mp4"
+}
 
 function add_to_backup_list {
 	echo $PWD/$1 >> ~/backuplist
 }
+
+# === COLORS ===
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # === FISH PROMPT ===
 
@@ -104,4 +130,4 @@ prompt()
 {
 	printf "$(username)@$(hostname) $(short_path)$(git_branch)$(exitstatus $1)> "
 }
-PS1='$(prompt $?)'
+#PS1='$(prompt $?)'
