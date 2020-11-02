@@ -3,10 +3,6 @@
 #interval=60
 
 [cpu]
-command=~/.config/i3blocks/network
-interval=1
-
-[cpu]
 command=~/.config/i3blocks/cpu
 interval=1
 color=#fc2d42
@@ -16,15 +12,15 @@ command=~/.config/i3blocks/memory
 interval=1
 color=#05ffff
 
-[swap]
-command=~/.config/i3blocks/swap
-interval=1
-color=#ccf70c
+#[swap]
+#command=~/.config/i3blocks/swap
+#interval=1
+#color=#ccf70c
 
-[disk]
-command=~/.config/i3blocks/disk
-interval=1
-color=#ff7f00
+#[disk]
+#command=~/.config/i3blocks/disk
+#interval=1
+#color=#ff7f00
 
 [io]
 command=~/.config/i3blocks/io

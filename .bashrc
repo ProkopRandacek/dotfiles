@@ -8,11 +8,11 @@ export EDITOR='nvim'
 export VISUAL="code"
 export DIFFPROG='code -d'
 
-alias s=sudo
-alias c=clear
+alias s='sudo'
+alias c='clear'
 
 alias re='sudo $(history -p !!)'
-alias ls='exa --group-directories-first --sort="Extension"'
+alias ls='exa --group-directories-first --sort="Extension" -a'
 alias ll='exa --group-directories-first --sort="Extension" -la'
 alias sl='ls'
 alias py='python'
