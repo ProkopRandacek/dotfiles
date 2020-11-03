@@ -4,12 +4,12 @@ rm ./.config/i3/*       -rf
 rm ./.config/i3blocks/* -rf
 rm ./.config/nvim/*     -rf
 rm ./.gitconfig
-rm ./.bashrc
+rm ./.zshrc
 
 echo "copying new dotfiles"
 cp ~/.config/i3/*       ./.config/i3/       -r
 cp ~/.config/i3blocks/* ./.config/i3blocks/ -r
 cp ~/.config/nvim/*     ./.config/nvim/     -r
 cp ~/.gitconfig         ./
-cp ~/.bashrc            ./
+cp ~/.zshrc             ./
 echo "done"
