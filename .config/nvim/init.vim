@@ -4,7 +4,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dag/vim-fish'
 Plug 'psf/black', {'commit': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1'}
-Plug 'gyim/vim-boxdraw'
+Plug 'alantech/vim-alan'
 call plug#end()
 
 " Colors
@@ -61,6 +61,7 @@ nnoremap <space> za
 " Spell stuff
 command Spc :set spell spelllang=cz_cs
 command Spe :set spell spelllang=en_us
+command Spd :set spell spelllang=de_20
 command Spn :set nospell
 
 

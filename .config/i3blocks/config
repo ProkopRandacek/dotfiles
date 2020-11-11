@@ -33,5 +33,5 @@ color=#f6ff05
 #color=#91e78b
 
 [time]
-command=date -u +"%A %d. %m. %Y %H:%M:%S"
+command=date +"%H:%M:%S %d-%m-%Y"
 interval=1
