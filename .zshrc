@@ -57,4 +57,21 @@ function add_to_backup_list {
 	echo $PWD/$1 >> ~/backuplist
 }
 
+function mks { # make script
+	touch $1 &&
+	chmod +x $1 &&
+	echo "#!/bin/sh" > $1 &&
+	nvim $1
+}
+
+function arun { # compile and run compiled alan code
+	alan compile $1 "${1%.*}.agc" &&
+	touch "run_${1%.*}" &&
+	chmod +x "run_${1%.*}" &&
+	echo "#!/bin/sh" > "run_${1%.*}" &&
+	echo "alan run ${1%.*}.agc" >> "run_${1%.*}" &&
+	alan run "${1%.*}.agc"
+}
+
+
 source /home/prokop/scripts/zshprompt
