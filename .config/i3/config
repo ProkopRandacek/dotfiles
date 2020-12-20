@@ -36,8 +36,9 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-bindsym $mod+p       exec "scrot -q 100 -e    'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures'"
-bindsym $mod+Shift+p exec "scrot -q 100 -u -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures'"
+bindsym           $mod+p       exec "scrot -q 100    -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures'"
+bindsym           $mod+Shift+p exec "scrot -q 100 -u -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures'"
+bindsym --release $mod+Shift+c exec "scrot -q 100 -s -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures'"
 
 assign [class="Steam"]           → 10
 assign [class="firefox"]         → 11

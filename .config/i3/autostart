@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 setxkbmap us,cz -variant ,ucw -option grp:caps_switch
-feh --bg-max ~/bg0.png
+#feh --bg-max ~/bg0.png
 kitty&
 nm-applet&
 copyq&
@@ -9,10 +9,10 @@ telegram-desktop&
 
 if test "$(cat /etc/hostname)" = "flower"
 then
-	xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --mode 1280x1024 --pos 1920x56 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal
-	picom --experimental-backends --backend glx --blur-method dual_kawase --blur-strength 4 # doesnt work lol
+	#~/.screenlayout/default.sh
+	#picom --experimental-backends --backend glx --blur-method dual_kawase --blur-strength 4 # doesnt work lol
 	copyq&
 	firefox&
 	discord&
-	steam&
+	#steam&
 fi

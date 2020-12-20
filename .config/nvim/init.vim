@@ -1,9 +1,24 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
+
+" Functionality
+"Plug 'neoclide/coc.nvim', {'branch': 'release'} " Hint menu thing
+"Plug 'scrooloose/nerdtree' " file tree
+"Plug 'scrooloose/nerdcommenter' " Comment line thing
+"Plug 'airblade/vim-gitgutter' " Git thing
+"Plug 'ryanoasis/vim-devicons' " Fancy icons in nerd tree
+"Plug 'tsony-tsonev/nerdtree-git-plugin' " idk
+
+" Looks
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Code formatting
+"Plug 'psf/black', {'commit': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1'} " (python)
+Plug 'psf/black'
+
+" Syntax
 Plug 'dag/vim-fish'
-Plug 'psf/black', {'commit': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1'}
 Plug 'alantech/vim-alan'
 call plug#end()
 
@@ -13,6 +28,24 @@ highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
+
+
+" Nerdtree
+let g:NERDTreeGitStatusWithFlags = 1
+nmap <C-n> :NERDTreeToggle<CR>
+
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+autocmd BufEnter * call SyncTree()
 
 
 " Sets
@@ -63,7 +96,6 @@ command Spc :set spell spelllang=cz_cs
 command Spe :set spell spelllang=en_us
 command Spd :set spell spelllang=de_20
 command Spn :set nospell
-
 
 hi SpellBad NONE
 hi SpellBad cterm=underline
