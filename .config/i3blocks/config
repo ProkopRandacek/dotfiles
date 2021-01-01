@@ -2,8 +2,13 @@
 #command=~/.config/i3blocks/poradi.py
 #interval=60
 
-[cpu]
-command=~/.config/i3blocks/cpu
+#[cpu]
+#command=~/.config/i3blocks/cpu
+#interval=1
+#color=#fc2d42
+
+[cache]
+command=du ~/.cache/ -hs --si | awk '{print $1}'
 interval=1
 color=#fc2d42
 
@@ -22,10 +27,10 @@ color=#05ffff
 #interval=1
 #color=#ff7f00
 
-[io]
-command=~/.config/i3blocks/io
-interval=1
-color=#f6ff05
+#[io]
+#command=~/.config/i3blocks/io
+#interval=1
+#color=#f6ff05
 
 #[battery]
 #command=~/.config/i3blocks/battery
@@ -33,5 +38,11 @@ color=#f6ff05
 #color=#91e78b
 
 [time]
-command=date +"%H:%M:%S %d-%m-%Y"
+command=date +"%H:%M:%S"
+color=#91e78b
+interval=1
+
+[date]
+command=echo $(date +"%d-%m-%Y %A") $(cal $(date +"%m %Y") | awk 'NF {DAYS = $NF}; END {print DAYS}')
+color=#f6ff05
 interval=1

@@ -1,6 +1,4 @@
 #!/bin/bash
-usage=$(free -m | grep Mem | awk '{usage=($3/1000)} END {print usage}')
-full=$(free -m | grep Mem | awk '{full=($2/1000)} END {print full}')
-usage=${usage:0:3}
-full=${full:0:2}
-echo $usage"/"$full
+usage=$(free -h --si | grep Mem | sed -r 's/[G]+//g' | awk '{print $3}')
+full=$(free -h --si | grep Mem | sed -r 's/[G]+//g' | awk '{print $2}')
+echo $usage" / "$full

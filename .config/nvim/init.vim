@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'airblade/vim-gitgutter' " Git thing
 "Plug 'ryanoasis/vim-devicons' " Fancy icons in nerd tree
 "Plug 'tsony-tsonev/nerdtree-git-plugin' " idk
+"Plug 'nathanaelkane/vim-indent-guides' " indent lines
 
 " Looks
 Plug 'vim-airline/vim-airline'
@@ -28,24 +29,6 @@ highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
-
-
-" Nerdtree
-let g:NERDTreeGitStatusWithFlags = 1
-nmap <C-n> :NERDTreeToggle<CR>
-
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-autocmd BufEnter * call SyncTree()
 
 
 " Sets
@@ -75,16 +58,18 @@ let g:airline_powerline_fonts = 1
 "let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
 
-
-" Auto running the code
-autocmd FileType python map <F5> :w \| !py %<cr>
-
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePre *.json execute ':%!python -m json.tool'
+
+autocmd BufWritePre *.c %s/\s\+$//e
+autocmd FileType c setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+
+filetype plugin indent on
 
 " Custom tab sizes for some files
 autocmd FileType html setlocal tabstop=2 shiftwidth=2
 autocmd FileType md   setlocal tabstop=2 shiftwidth=2
+"autocmd FileType py   setlocal tabstop=4 shiftwidth=2
 
 autocmd FileType md   set wrap
 

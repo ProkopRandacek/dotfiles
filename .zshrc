@@ -12,9 +12,8 @@ compinit
 zstyle ':completion:*' menu select
 
 # Make Home, End and Delete do what they should do... not working TODO
-bindkey "^[[3~" delete-char
-bindkey "^[[8~" end-of-line
-bindkey "^[[7~" beginning-of-line
+bindkey "\033[1~" beginning-of-line
+bindkey "\033[4~" end-of-line
 
 PATH="$PATH:/home/prokop/.local/lib/python3.8/site-packages/"
 PATH="$PATH:/home/prokop/.local/bin"
@@ -39,16 +38,21 @@ alias vpn='sudo openvpn /home/prokop/openvpn/client.ovpn'
 alias vim='nvim'
 alias cal='cal --monday'
 
+alias sctl='systemctl'
+
 alias pingg='ping 8.8.8.8'
 alias pingr="ping $(ip route get fibmatch 8.8.8.8 | awk '{print $3}')"
 alias ffrec='ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 output.mkv'
 
-alias virc='vim ~/.zshrc'
+alias virc='vim ~/.zshrc; source ~/.zshrc'
 
 alias backup=/home/prokop/scripts/backup/backup.sh
 alias packup=/home/prokop/scripts/backup/packup.sh
 alias sshvps='ssh prokop@randacek.dev'
 alias sshope='ssh sfs2x@rbxrouter.kenpa.cz -p 4053'
+alias sshsmp='sshfs prokop@168.119.114.43:smp ~/smp -oauto_cache,reconnect,no_readahead'
+
+alias sshusmp='fusermount3 -u ~/smp'
 
 #alias libreoffice='flatpak run org.libreoffice.LibreOffice'
 

@@ -2,17 +2,17 @@
 setxkbmap us,cz -variant ,ucw -option grp:caps_switch
 #feh --bg-max ~/bg0.png
 kitty&
-nm-applet&
+#nm-applet&
 copyq&
 kmix&
 telegram-desktop&
 
 if test "$(cat /etc/hostname)" = "flower"
 then
-	#~/.screenlayout/default.sh
-	#picom --experimental-backends --backend glx --blur-method dual_kawase --blur-strength 4 # doesnt work lol
-	copyq&
-	firefox&
-	discord&
+	~/.screenlayout/default.sh
+	picom -b -D 1 &
+	feh --bg-fill ~/Documents/bg-sm.png ~/Documents/bg.png
+	#firefox&
+	#discord&
 	#steam&
 fi
