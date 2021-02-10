@@ -9,6 +9,8 @@ hide_edge_borders smart
 
 floating_modifier $mod
 
+bindsym $mod+a exec ~/path/togglebg
+
 bindsym $mod+d exec dmenu_run -fn "Inconsolata 12" -sb "#ff8c00" -sf black
 bindsym $mod+Return exec kitty
 bindsym $mod+q kill
@@ -36,14 +38,16 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-bindsym           $mod+p       exec "scrot -q 100    -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures/'"
-bindsym           $mod+Shift+p exec "scrot -q 100 -u -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures/'"
-bindsym --release $mod+Shift+c exec "scrot -q 100 -s -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures/'"
+bindsym $mod+p       exec "scrot -q 100    -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures/screenshots'"
+bindsym $mod+Shift+p exec "scrot -q 100 -u -e 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures/screenshots'"
+
+bindsym --release $mod+Shift+c exec "scrot -q 100 --line style=dash,width=1,color='orange' -sfe 'copyq write image/png - < $f && copyq select 0 && mv $f ~/Pictures/screenshots'"
 
 assign [class="Steam"]           → 10
 assign [class="firefox"]         → 11
 assign [class="TelegramDesktop"] → 12
 assign [class="discord"]         → 13
+assign [class="lightcord"]       → 13
 
 set $ws0 "0"
 set $ws1 "1"

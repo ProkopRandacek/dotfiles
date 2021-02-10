@@ -42,3 +42,7 @@
 [push]
 	# only push to upstream
 	default = upstream
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false

@@ -17,6 +17,7 @@ bindkey "\033[4~" end-of-line
 
 PATH="$PATH:/home/prokop/.local/lib/python3.8/site-packages/"
 PATH="$PATH:/home/prokop/.local/bin"
+PATH="$PATH:/home/prokop/path"
 export PATH
 export EDITOR='nvim'
 export VISUAL='code'
@@ -37,8 +38,9 @@ alias cp='cp --reflink' # https://wiki.archlinux.org/index.php/Btrfs#Creating_li
 alias vpn='sudo openvpn /home/prokop/openvpn/client.ovpn'
 alias vim='nvim'
 alias cal='cal --monday'
+alias man='man -Pmost'
 
-alias sctl='systemctl'
+alias sctl='sudo systemctl'
 
 alias pingg='ping 8.8.8.8'
 alias pingr="ping $(ip route get fibmatch 8.8.8.8 | awk '{print $3}')"
@@ -56,11 +58,6 @@ alias sshusmp='fusermount3 -u ~/smp'
 
 #alias libreoffice='flatpak run org.libreoffice.LibreOffice'
 
-function g {
-	echo "$1" >> ~/pkgs
-	yay -S "$1"
-}
-
 function ff2mp4 {
 	ffmpeg -i "$1" "${1%.*}.mp4"
 }
@@ -69,8 +66,20 @@ function add_to_backup_list {
 	echo $PWD/$1 >> ~/backuplist
 }
 
+function cr {
+	gcc -std=c11 $1 -o ${1%.*} &&
+	./${1%.*}
+	rm ${1%.*} -f
+}
+
+function g {
+	echo "$1" >> ~/pkgs
+	yay -S "$1"
+}
+
+
 function 2tmp {
-	rsync $1 prokop@randacek.dev:/var/www/html/tmp --progress
+	rsync $1 prokop@randacek.dev:/home/prokop/public/ --progress
 	echo https://randacek.dev/tmp/$1
 }
 

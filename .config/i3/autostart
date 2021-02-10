@@ -10,7 +10,7 @@ telegram-desktop&
 if test "$(cat /etc/hostname)" = "flower"
 then
 	~/.screenlayout/default.sh
-	picom -b -D 1 &
+	#picom -b -D 1 &
 	feh --bg-fill ~/Documents/bg-sm.png ~/Documents/bg.png
 	#firefox&
 	#discord&

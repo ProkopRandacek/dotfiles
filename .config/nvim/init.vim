@@ -21,6 +21,9 @@ Plug 'psf/black'
 " Syntax
 Plug 'dag/vim-fish'
 Plug 'alantech/vim-alan'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 call plug#end()
 
 " Colors
@@ -69,6 +72,7 @@ filetype plugin indent on
 " Custom tab sizes for some files
 autocmd FileType html setlocal tabstop=2 shiftwidth=2
 autocmd FileType md   setlocal tabstop=2 shiftwidth=2
+autocmd FileType txt   setlocal wrap
 "autocmd FileType py   setlocal tabstop=4 shiftwidth=2
 
 autocmd FileType md   set wrap
@@ -89,3 +93,6 @@ hi SpellBad ctermfg=red
 hi SpellCap NONE
 hi SpellCap cterm=underline
 hi SpellCap ctermfg=blue
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
